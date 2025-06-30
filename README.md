@@ -213,3 +213,8 @@ with open("file.wav", "wb") as f:
 
 # Политика использования
 Перепродажа доступа к API запрещена без письменного согласия Cody.
+
+# Поддержка и контакты
+>**email**: vvirtr@gmail.com
+>
+>**telegram**: t.me/vvirtr
