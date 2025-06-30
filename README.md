@@ -1,7 +1,7 @@
 # cody-api
 Бесплатное безлимитное api llm моделей
 
-> Drop-in замена OpenAI SDK: поменяйте **три строки** — и пользуйтесь 15 моделями без лимитов и оплаты.
+> Drop-in замена OpenAI SDK: поменяйте **две строки** — и пользуйтесь 15 моделями без лимитов и оплаты.
 
 # Получить API-ключ
 Чтобы получить api ключ, вам нужно отослать post запрос на https://cody.su/api/v1/get_api_key
@@ -143,13 +143,14 @@ with open("cody.png", "wb") as f:
 ><img src="https://github.com/user-attachments/assets/f41bcf25-1d7f-4126-93b0-ba8725027e5f" width="40%"> <img src="https://github.com/user-attachments/assets/48ad1841-8eeb-4070-a082-c19cbcfea40c" width="40%">
 
 ## Генерация аудио
+### В данный момент у провайдера проблемы с этой моделью
 ```python
 from openai import OpenAI
 import base64
 
 client = OpenAI(
     base_url="https://cody.su/api/v1",
-    api_key="cody-nwqaAQoqMkrYc9OGHI2p2QnMgHU4hHLzMhELM8IxUNaCB5p1e6IoY5Q_5Kzr48Bv7l-NMWODwrTGs9M1bJGfLQ",
+    api_key="cody-...",
 )
 
 completion = client.chat.completions.create(
@@ -168,3 +169,47 @@ wav_bytes = base64.b64decode(completion.choices[0].message.audio.data)
 with open("file.wav", "wb") as f:
     f.write(wav_bytes)
 ```
+>https://github.com/user-attachments/assets/749f85a5-91e0-43de-acd8-73bb6b3a6074
+
+# Поддерживаемые модели
+```json
+[
+  "o3",
+  "grok-3-mini",
+  "deepseek-r1",
+  "gpt-4.1",
+  "deepseek-v3",
+  "gpt-4.1-mini",
+  "gpt-4.1-nano",
+  "gpt-4o-audio-preview",
+  "gpt-4o-mini-search",
+  "phi-4-mini",
+  "mistral-small-3.1",
+  "qwen2.5-coder",
+  "llama-4-scout",
+  "flux",
+  "gpt-image-1",
+]
+```
+
+# Таблица совместимости функций
+| Endpoint  | Статус | Комментарий |
+| ------------- | ------------- | ------------- |
+| chat.completions  | ⚠️ Частично  | Поддержка streaming, file upload, **временно не работает gpt-4o-audio-preview**  |
+| images.generate  | ✅ Полная поддержка  | Поддержка gpt-image-1, size  |
+| images.edit  | ✅ Полная поддержка  | Поддержка gpt-image-1, size  |
+
+# Интеграция в IDE / плагины
+На данный момент **тестово поддерживается Cline**, нужно вставить наш url в поле base_url и указать модель из списка
+
+# Ограничения
+**Сейчас rate limit = ∞**. Если ситуация изменится, мы заблаговременно предупредим всех участников.
+
+# Безопасность и конфиденциальность
+Мы проектировали Cody API по принципу **zero-retention**: содержимое ваших запросов (промпты, ответы, вложенные файлы) **не пишется на диск, не передаётся в журналы и удаляется сразу после генерации результата**.
+>**Никакого логирования контента.**
+>
+>**Сервис обрабатывает промпт в оперативной памяти и мгновенно стирает его после того, как LLM вернула ответ.**
+
+# Политика использования
+Перепродажа доступа к API запрещена без письменного согласия Cody.
