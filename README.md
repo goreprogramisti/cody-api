@@ -143,7 +143,6 @@ with open("cody.png", "wb") as f:
 ><img src="https://github.com/user-attachments/assets/f41bcf25-1d7f-4126-93b0-ba8725027e5f" width="40%"> <img src="https://github.com/user-attachments/assets/48ad1841-8eeb-4070-a082-c19cbcfea40c" width="40%">
 
 ## Генерация аудио
-### В данный момент у провайдера проблемы с этой моделью
 ```python
 from openai import OpenAI
 import base64
