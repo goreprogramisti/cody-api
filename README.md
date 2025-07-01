@@ -195,7 +195,7 @@ with open("file.wav", "wb") as f:
 # Таблица совместимости функций
 | Endpoint  | Статус | Комментарий |
 | ------------- | ------------- | ------------- |
-| chat.completions  | ⚠️ Частично  | Поддержка streaming, file upload, **временно не работает gpt-4o-audio-preview**  |
+| chat.completions  | ✅ Полная поддержка  | Поддержка streaming, file upload, gpt-4o-audio-preview  |
 | images.generate  | ✅ Полная поддержка  | Поддержка gpt-image-1, size  |
 | images.edit  | ✅ Полная поддержка  | Поддержка gpt-image-1, size  |
 
