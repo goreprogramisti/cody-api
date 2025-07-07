@@ -173,6 +173,8 @@ with open("file.wav", "wb") as f:
 # Поддерживаемые модели
 ```json
 [
+  "o3-pro",
+  "o4-mini",
   "o3",
   "grok-3-mini",
   "deepseek-r1",
