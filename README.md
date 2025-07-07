@@ -1,7 +1,7 @@
 # cody-api
 Бесплатное безлимитное api llm моделей
 
-> Drop-in замена OpenAI SDK: поменяйте **две строки** — и пользуйтесь 15 моделями без лимитов и оплаты.
+> Drop-in замена OpenAI SDK: поменяйте **две строки** — и пользуйтесь большым количеством моделей без жестикх лимитов и оплаты.
 
 # Получить API-ключ
 Чтобы получить api ключ, вам нужно отослать post запрос на https://cody.su/api/v1/get_api_key
@@ -153,7 +153,7 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    model="gpt-4o-audio-preview",
+    model="gpt-4o-mini-audio-preview",
     modalities=["text", "audio"],
     audio={"voice": "alloy", "format": "wav"},
     messages=[
@@ -171,24 +171,15 @@ with open("file.wav", "wb") as f:
 >https://github.com/user-attachments/assets/749f85a5-91e0-43de-acd8-73bb6b3a6074
 
 # Поддерживаемые модели
-```json
-[
-  "o3",
-  "grok-3-mini",
-  "deepseek-r1",
-  "gpt-4.1",
-  "deepseek-v3",
-  "gpt-4.1-mini",
-  "gpt-4.1-nano",
-  "gpt-4o-audio-preview",
-  "gpt-4o-mini-search",
-  "phi-4-mini",
-  "mistral-small-3.1",
-  "qwen2.5-coder",
-  "llama-4-scout",
-  "flux",
-  "gpt-image-1",
-]
+```py
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://cody.su/api/v1",
+    api_key="cody-..."
+)
+
+print(client.models.list())
 ```
 
 # Таблица совместимости функций
@@ -196,13 +187,13 @@ with open("file.wav", "wb") as f:
 | ------------- | ------------- | ------------- |
 | chat.completions  | ✅ Полная поддержка  | Поддержка streaming, file upload, gpt-4o-audio-preview  |
 | images.generate  | ✅ Полная поддержка  | Поддержка gpt-image-1, size  |
-| images.edit  | ✅ Полная поддержка  | Поддержка gpt-image-1, size  |
+| images.edit  | ⚠️ Частичная поддержка  | Очень плохо работает изменение изображений, проблема у провайдера  |
 
 # Интеграция в IDE / плагины
 На данный момент **тестово поддерживается Cline**, нужно вставить наш url в поле base_url и указать модель из списка
 
 # Ограничения
-**Сейчас rate limit = ∞**. Если ситуация изменится, мы заблаговременно предупредим всех участников в нашем телеграм канале: https://t.me/codyapi.
+**Сейчас rate limit = 20rpm и 5rps**. Если ситуация изменится, мы заблаговременно предупредим всех участников в нашем телеграм канале: https://t.me/codyapi.
 
 # Безопасность и конфиденциальность
 Мы проектировали Cody API по принципу **zero-retention**: содержимое ваших запросов (промпты, ответы, вложенные файлы) **не пишется на диск и удаляется сразу после генерации результата**.
