@@ -170,6 +170,23 @@ with open("file.wav", "wb") as f:
 ```
 >https://github.com/user-attachments/assets/749f85a5-91e0-43de-acd8-73bb6b3a6074
 
+### Доступные голоса
+```
+"alloy",
+"echo",
+"fable",
+"onyx",
+"nova",
+"shimmer",
+"coral",
+"verse",
+"ballad",
+"ash",
+"sage",
+"amuch",
+"dan"
+```
+
 # Поддерживаемые модели
 ```py
 from openai import OpenAI
