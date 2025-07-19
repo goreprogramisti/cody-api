@@ -172,12 +172,12 @@ print(resp.json())
 
 ## 3. Endpoints
 
-| Endpoint | Status | Notes |
-|----------|--------|-------|
-| `chat.completions` | ✅ | Streaming, file upload, audio (GPT-4o) |
-| `images.generate`  | ✅ | `gpt-image-1`, `flux.1-kontext-pro`, `size` param |
-| `images.edit`      | ⚠️ | Provider-side quality issues |
-| `video.generations` | ✅ | `wan-2.1`, 480p, ≤4 s |
+| Endpoint | Status |
+|----------|--------|
+| `chat.completions` | ✅ |
+| `images.generate`  | ✅ |
+| `images.edit`      | ✅ |
+| `video.generations` | ✅ |
 
 ## 4. Models
 ```python
@@ -401,12 +401,12 @@ print(resp.json())
 
 ## 3. Эндпоинты
 
-| Endpoint | Статус | Примечание |
-|----------|--------|------------|
-| `chat.completions` | ✅ | Streaming, file upload, audio (GPT-4o) |
-| `images.generate`  | ✅ | `gpt-image-1`, `flux.1-kontext-pro`, `size` |
-| `images.edit`      | ⚠️ | Проблемы качества на стороне провайдера |
-| `video.generations` | ✅ | `wan-2.1`, 480p, ≤4 с |
+| Endpoint | Статус |
+|----------|--------|
+| `chat.completions` | ✅ |
+| `images.generate`  | ✅ |
+| `images.edit`      | ✅ |
+| `video.generations` | ✅ |
 
 ## 4. Модели
 ```python
