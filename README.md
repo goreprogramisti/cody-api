@@ -27,7 +27,7 @@
 - 🆓 **Zero cost** and no hard quotas.
 - 🔒 **Zero-retention** architecture: no request content is persisted.
 - 📷 **Multimodal**: text, image generation/editing, Text-to-Speech.
-- 🚀 Constantly growing catalog of 30+ SOTA models.
+- 🚀 Constantly growing catalog of **30+ SOTA models**.
 
 ---
 
@@ -256,7 +256,7 @@ Updates will be announced in our [Telegram channel](https://t.me/codyapi).
 - 🆓 **Полностью бесплатно**, без жёстких квот.
 - 🔒 **Zero-retention** архитектура: содержимое запросов не сохраняется.
 - 📷 **Мультимодальность**: текст, генерация/редактирование изображений, TTS.
-- 🚀 Каталог из 30+ актуальных SOTA моделей.
+- 🚀 Каталог из **30+ актуальных SOTA моделей**.
 
 ---
 
