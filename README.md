@@ -85,6 +85,24 @@ img = client.images.generate(
 pathlib.Path("otter.png").write_bytes(base64.b64decode(img.data[0].b64_json))
 ```
 
+### Image edits
+```python
+from openai import OpenAI
+import base64, pathlib
+
+client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
+
+with open("image.png", "rb") as f:
+    img_bytes = f.read()
+
+img = client.images.edit(
+    model="gpt-image-1",
+    prompt="Change the background color to a beautiful lake somewhere in the forest",
+    image=[img_bytes])
+
+pathlib.Path("image.png").write_bytes(base64.b64decode(img.data[0].b64_json))
+```
+
 > **Note:** The `images.generate` and `images.edit` endpoints return images **only** as base64 (`b64_json`).
 
 ### Text-to-Speech
@@ -312,6 +330,24 @@ img = client.images.generate(
     prompt="Ветеринар слушает сердце детёныша выдры, стиль детской книги",
 )
 pathlib.Path("otter.png").write_bytes(base64.b64decode(img.data[0].b64_json))
+```
+
+### Изменение изображений
+```python
+from openai import OpenAI
+import base64, pathlib
+
+client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
+
+with open("image.png", "rb") as f:
+    img_bytes = f.read()
+
+img = client.images.edit(
+    model="gpt-image-1",
+    prompt="Измени цвет фона на красивое озеро где-то в лесу",
+    image=[img_bytes])
+
+pathlib.Path("image.png").write_bytes(base64.b64decode(img.data[0].b64_json))
 ```
 
 > **Примечание:** эндпоинты `images.generate` и `images.edit` возвращают изображения **только** в Base64 (`b64_json`).
