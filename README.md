@@ -103,8 +103,6 @@ img = client.images.edit(
 pathlib.Path("image.png").write_bytes(base64.b64decode(img.data[0].b64_json))
 ```
 
-> **Note:** The `images.generate` and `images.edit` endpoints return images **only** as base64 (`b64_json`).
-
 ### Text-to-Speech
 ```python
 from openai import OpenAI
@@ -349,8 +347,6 @@ img = client.images.edit(
 
 pathlib.Path("image.png").write_bytes(base64.b64decode(img.data[0].b64_json))
 ```
-
-> **Примечание:** эндпоинты `images.generate` и `images.edit` возвращают изображения **только** в Base64 (`b64_json`).
 
 ### Синтез речи
 ```python
