@@ -137,7 +137,6 @@
 * gemini-2.0-flash-lite-001
 * gemini-2.0-flash-001
 * gemini-2.0-flash
-* gemini-2.0-flash-exp:free
 * gemini-2.5-flash
 * gemini-2.5-flash-lite-preview-06-17
 * gemini-2.5-flash-preview
@@ -180,22 +179,16 @@
 * qwen-2.5-72b
 * qwen2.5-vl-72b-instruct
 * qwen3-14b
-* qwen3-14b:free
 * qwen3-235b-a22b
 * Qwen3-235B-A22B-fp8-tput
-* qwen3-235b-a22b:free
 * qwen3-30b-a3b
-* qwen3-30b-a3b:free
 * qwen3-32b
-* qwen3-32b:free
 * qwen3-8b
-* qwen3-8b:free
 * qwen-3-235b
 * qwen-3-235b-a22b
 * qwen-qwq-32b
 * qwq-32b
 * qwq-32b-preview
-* qwq-32b:free
 * qwq-32b-arliai-rpr-v1:free
 * eva-qwen-2.5-32b
 * eva-qwen-2.5-72b
@@ -221,7 +214,6 @@
 * deepseek-r1-distill-qwen-1.5b
 * deepseek-r1-distill-qwen-7b
 * deepseek-r1-distill-qwen-14b
-* deepseek-r1-distill-qwen-14b:free
 * deepseek-r1-distill-qwen-32b
 * deepseek-r1t-chimera:free
 * r1-1776
@@ -318,7 +310,6 @@
 * pixtral-large-2411
 * codestral-2501
 * devstral-small
-* devstral-small:free
 * magistral-medium-2506
 * magistral-medium-2506:thinking
 * magistral-small-2506
