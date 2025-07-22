@@ -85,7 +85,43 @@ img = client.images.generate(
 pathlib.Path("otter.png").write_bytes(base64.b64decode(img.data[0].b64_json))
 ```
 
+### Image Edit
+```python
+from openai import OpenAI, base64, pathlib
+
+client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
+
+edited = client.images.edit(
+    model="gpt-image-1",
+    prompt="Add sunglasses",
+    image=open("otter.png", "rb"),
+    mask=open("mask.png", "rb"),
+)
+pathlib.Path("otter_edit.png").write_bytes(base64.b64decode(edited.data[0].b64_json))
+```
+
 > **Note:** The `images.generate` and `images.edit` endpoints return images **only** as base64 (`b64_json`).
+
+### Video
+```python
+import requests, json
+
+headers = {
+    "Authorization": "Bearer cody-...",
+    "Content-Type": "application/json",
+}
+
+payload = {
+    "model": "wan-2.1",
+    "prompt": "A cinematic shot of a futuristic city with flying cars",
+    "ratio": "16:9",
+    "quality": "480p",  # only 480p supported
+    "duration": 4         # seconds; <= 4
+}
+
+resp = requests.post("https://cody.su/api/v1/video/generations", headers=headers, json=payload)
+print(resp.json())
+```
 
 ### Text-to-Speech
 ```python
@@ -133,36 +169,6 @@ open("hello.wav", "wb").write(base64.b64decode(audio.choices[0].message.audio.da
 </details>
 
 <details>
-<summary>video.generation</summary>
-
-```json
-{
-  "created": 1677652288,
-  "data": [
-    {
-      "b64_json": "<base64 PNG data>"
-    }
-  ]
-}
-```
-</details>
-
-### Image Edit
-```python
-from openai import OpenAI, base64, pathlib
-
-client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
-
-edited = client.images.edit(
-    model="gpt-image-1",
-    prompt="Add sunglasses",
-    image=open("otter.png", "rb"),
-    mask=open("mask.png", "rb"),
-)
-pathlib.Path("otter_edit.png").write_bytes(base64.b64decode(edited.data[0].b64_json))
-```
-
-<details>
 <summary>images.edit</summary>
 
 ```json
@@ -177,26 +183,20 @@ pathlib.Path("otter_edit.png").write_bytes(base64.b64decode(edited.data[0].b64_j
 ```
 </details>
 
-### Video
-```python
-import requests, json
+<details>
+<summary>video.generation</summary>
 
-headers = {
-    "Authorization": "Bearer cody-...",
-    "Content-Type": "application/json",
+```json
+{
+  "created": 1677652288,
+  "data": [
+    {
+      "b64_json": "<base64 Video data>"
+    }
+  ]
 }
-
-payload = {
-    "model": "wan-2.1",
-    "prompt": "A cinematic shot of a futuristic city with flying cars",
-    "ratio": "16:9",
-    "quality": "480p",  # only 480p supported
-    "duration": 4         # seconds; <= 4
-}
-
-resp = requests.post("https://cody.su/api/v1/video/generations", headers=headers, json=payload)
-print(resp.json())
 ```
+</details>
 
 ---
 
@@ -330,6 +330,26 @@ edited = client.images.edit(
 pathlib.Path("otter_edit.png").write_bytes(base64.b64decode(edited.data[0].b64_json))
 ```
 
+### Видео
+```python
+import requests, json
+
+headers = {
+    "Authorization": "Bearer cody-...",
+    "Content-Type": "application/json",
+}
+
+payload = {
+    "model": "wan-2.1",
+    "prompt": "Кинематографичный кадр футуристического города с летающими машинами",
+    "ratio": "16:9",
+    "quality": "480p",  # поддерживается только 480p
+    "duration": 4         # секунд; <= 4
+}
+
+resp = requests.post("https://cody.su/api/v1/video/generations", headers=headers, json=payload)
+print(resp.json())
+```
 
 ### Синтез речи
 ```python
@@ -377,21 +397,6 @@ open("hello.wav", "wb").write_bytes(base64.b64decode(audio.choices[0].message.au
 </details>
 
 <details>
-<summary>video.generation</summary>
-
-```json
-{
-  "created": 1677652288,
-  "data": [
-    {
-      "b64_json": "<base64 PNG data>"
-    }
-  ]
-}
-```
-</details>
-
-<details>
 <summary>images.edit</summary>
 
 ```json
@@ -404,26 +409,20 @@ open("hello.wav", "wb").write_bytes(base64.b64decode(audio.choices[0].message.au
 ```
 </details>
 
-### Видео
-```python
-import requests, json
+<details>
+<summary>video.generation</summary>
 
-headers = {
-    "Authorization": "Bearer cody-...",
-    "Content-Type": "application/json",
+```json
+{
+  "created": 1677652288,
+  "data": [
+    {
+      "b64_json": "<base64 Video data>"
+    }
+  ]
 }
-
-payload = {
-    "model": "wan-2.1",
-    "prompt": "Кинематографичный кадр футуристического города с летающими машинами",
-    "ratio": "16:9",
-    "quality": "480p",  # поддерживается только 480p
-    "duration": 4         # секунд; <= 4
-}
-
-resp = requests.post("https://cody.su/api/v1/video/generations", headers=headers, json=payload)
-print(resp.json())
 ```
+</details>
 
 ---
 
