@@ -312,8 +312,6 @@ img = client.images.generate(
 pathlib.Path("otter.png").write_bytes(base64.b64decode(img.data[0].b64_json))
 ```
 
-> **Примечание:** эндпоинты `images.generate` и `images.edit` возвращают изображения **только** в Base64 (`b64_json`).
-
 ### Редактирование изображения
 ```python
 from openai import OpenAI
@@ -329,6 +327,7 @@ edited = client.images.edit(
 )
 pathlib.Path("otter_edit.png").write_bytes(base64.b64decode(edited.data[0].b64_json))
 ```
+> **Примечание:** эндпоинты `images.generate` и `images.edit` возвращают изображения **только** в Base64 (`b64_json`).
 
 ### Видео
 ```python
