@@ -205,17 +205,21 @@ print(OpenAI(base_url="https://cody.su/api/v1", api_key="...").models.list())
 
 **Text Generation**
 ```
-o4-mini, o4-mini-search, o3-search, o3
+o3-pro, o4-mini-high, o4-mini, o4-mini-search, o3-search, o3, o3-mini, o1, o1-preview, o1-mini
 gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, gpt-4.1-search
 gpt-4o, gpt-4o-mini, gpt-4o-mini-search-preview, gpt-4o-mini-transcribe
-gemini-2.5-pro, gemini-2.5-pro-search, gemini-2.5-flash-thinking, gemini-2.5-flash, gemini-2.0-flash
-claude-4.0-sonnet-thinking, claude-4.0-sonnet-thinking-search, claude-4.0-sonnet, claude-4.0-sonnet-search
+gemini-2.5-pro, gemini-2.5-pro-search, gemini-2.5-flash-preview:thinking, gemini-2.5-pro-preview, gemini-2.5-flash-thinking, gemini-2.5-flash, gemini-2.0-flash
+gemma-3-12b-it, gemma-3-27b-it, gemma-3-4b-it, gemma-3n-e4b-it
+claude-4-opus-thinking, claude-4-opus, claude-4.0-sonnet-thinking, claude-4.0-sonnet-thinking-search, claude-4.0-sonnet, claude-4.0-sonnet-search
+claude-3-7-sonnet-thinking, claude-3-7-sonnet, claude-3.5-sonnet
 deepseek-r1, deepseek-r1-search, deepseek-v3
-grok-3-mini, kimi-k2, sonar
-llama-4-maverick, llama-4-scout
-qwq-32b, qwen-3-235b, qwen-3-235b-a22b, qwen2.5-coder
-minimax-m1-40k
-phi-4-mini
+grok-4, grok-3-mini, grok-3, grok-3-beta, grok-3-mini-beta, grok-2-1212, grok-2-vision-1212, grok-vision-beta
+kimi-k2, kimi-dev-72b:free, Kimi-K2-Instruct
+llama-4-maverick, llama-4-scout, llama-4-maverick-17b-128e-instruct, Llama-4-Scout-17B-16E-Instruct
+qwq-32b, qwen-3-235b, qwen-3-235b-a22b, qwen3-14b, qwen3-235b-a22b, qwen3-30b-a3b, qwen3-32b, qwen3-8b, qwq-32b-preview, qwen-3-235b, qwen2.5-coder
+minimax-m1-40k, sonar, codex-mini, evil, ernie-4.5-300b-a47b
+command-a, command-r, command-r-plus, command
+phi-4, phi-4-multimodal-instruct, phi-4-reasoning-plus, phi-4-mini
 ```
 
 **Image Generation / Editing**
@@ -223,7 +227,7 @@ phi-4-mini
 gpt-image-1
 imagen-4, imagen-3
 sana-1.5, sana-1.5-flash
-flux.1-kontext, flux.1-dev, flux.1-schnell-v2, flux.1-schnell
+flux.1-kontext, flux.1-dev, flux.1-schnell-v2, flux.1-schnell, FLUX.1-canny, FLUX.1-depth, FLUX.1-dev-lora, FLUX.1-kontext-max, FLUX.1-kontext-pro, FLUX.1-pro, FLUX.1-redux, FLUX.1.1-pro
 ```
 
 **Audio (TTS / ASR)**
@@ -235,6 +239,8 @@ gpt-4o-mini-audio-preview
 ```
 wan-2.1
 ```
+
++351 model
 
 ## 5. Rate Limits
 - 20 requests per minute
@@ -450,17 +456,21 @@ print(OpenAI(base_url="https://cody.su/api/v1", api_key="...").models.list())
 
 **Генерация текста**
 ```
-o4-mini, o4-mini-search, o3-search, o3
+o3-pro, o4-mini-high, o4-mini, o4-mini-search, o3-search, o3, o3-mini, o1, o1-preview, o1-mini
 gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, gpt-4.1-search
 gpt-4o, gpt-4o-mini, gpt-4o-mini-search-preview, gpt-4o-mini-transcribe
-gemini-2.5-pro, gemini-2.5-pro-search, gemini-2.5-flash-thinking, gemini-2.5-flash, gemini-2.0-flash
-claude-4.0-sonnet-thinking, claude-4.0-sonnet-thinking-search, claude-4.0-sonnet, claude-4.0-sonnet-search
+gemini-2.5-pro, gemini-2.5-pro-search, gemini-2.5-flash-preview:thinking, gemini-2.5-pro-preview, gemini-2.5-flash-thinking, gemini-2.5-flash, gemini-2.0-flash
+gemma-3-12b-it, gemma-3-27b-it, gemma-3-4b-it, gemma-3n-e4b-it
+claude-4-opus-thinking, claude-4-opus, claude-4.0-sonnet-thinking, claude-4.0-sonnet-thinking-search, claude-4.0-sonnet, claude-4.0-sonnet-search
+claude-3-7-sonnet-thinking, claude-3-7-sonnet, claude-3.5-sonnet
 deepseek-r1, deepseek-r1-search, deepseek-v3
-grok-3-mini, kimi-k2, sonar
-llama-4-maverick, llama-4-scout
-qwq-32b, qwen-3-235b, qwen-3-235b-a22b, qwen2.5-coder
-minimax-m1-40k
-phi-4-mini
+grok-4, grok-3-mini, grok-3, grok-3-beta, grok-3-mini-beta, grok-2-1212, grok-2-vision-1212, grok-vision-beta
+kimi-k2, kimi-dev-72b:free, Kimi-K2-Instruct
+llama-4-maverick, llama-4-scout, llama-4-maverick-17b-128e-instruct, Llama-4-Scout-17B-16E-Instruct
+qwq-32b, qwen-3-235b, qwen-3-235b-a22b, qwen3-14b, qwen3-235b-a22b, qwen3-30b-a3b, qwen3-32b, qwen3-8b, qwq-32b-preview, qwen-3-235b, qwen2.5-coder
+minimax-m1-40k, sonar, codex-mini, evil, ernie-4.5-300b-a47b
+command-a, command-r, command-r-plus, command
+phi-4, phi-4-multimodal-instruct, phi-4-reasoning-plus, phi-4-mini
 ```
 
 **Генерация / редактирование изображений**
@@ -468,7 +478,7 @@ phi-4-mini
 gpt-image-1
 imagen-4, imagen-3
 sana-1.5, sana-1.5-flash
-flux.1-kontext, flux.1-dev, flux.1-schnell-v2, flux.1-schnell
+flux.1-kontext, flux.1-dev, flux.1-schnell-v2, flux.1-schnell, FLUX.1-canny, FLUX.1-depth, FLUX.1-dev-lora, FLUX.1-kontext-max, FLUX.1-kontext-pro, FLUX.1-pro, FLUX.1-redux, FLUX.1.1-pro
 ```
 
 **Аудио (TTS / ASR)**
@@ -480,6 +490,8 @@ gpt-4o-mini-audio-preview
 ```
 wan-2.1
 ```
+
++351 модель
 
 ## 5. Ограничения
 - 20 запросов в минуту
