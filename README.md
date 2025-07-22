@@ -27,7 +27,7 @@
 - 🆓 **Zero cost** and no hard quotas.
 - 🔒 **Zero-retention** architecture: no request content is persisted.
 - 📷 **Multimodal**: text, image generation/editing, Text-to-Speech.
-- 🚀 Constantly growing catalog of 10+ SOTA models.
+- 🚀 Constantly growing catalog of 400+ SOTA models.
 
 ---
 
@@ -140,7 +140,37 @@ open("hello.wav", "wb").write(base64.b64decode(audio.choices[0].message.audio.da
   "created": 1677652288,
   "data": [
     {
-      "b64_json": "..."
+      "b64_json": "<base64 PNG data>"
+    }
+  ]
+}
+```
+</details>
+
+### Image Edit
+```python
+from openai import OpenAI, base64, pathlib
+
+client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
+
+edited = client.images.edit(
+    model="gpt-image-1",
+    prompt="Add sunglasses",
+    image=open("otter.png", "rb"),
+    mask=open("mask.png", "rb"),
+)
+pathlib.Path("otter_edit.png").write_bytes(base64.b64decode(edited.data[0].b64_json))
+```
+
+<details>
+<summary>images.edit</summary>
+
+```json
+{
+  "created": 1710002223,
+  "data": [
+    {
+      "b64_json": "<base64 PNG data>"
     }
   ]
 }
@@ -224,7 +254,7 @@ Updates will be announced in our [Telegram channel](https://t.me/codyapi).
 - 🆓 **Полностью бесплатно**, без жёстких квот.
 - 🔒 **Zero-retention** архитектура: содержимое запросов не сохраняется.
 - 📷 **Мультимодальность**: текст, генерация/редактирование изображений, TTS.
-- 🚀 Каталог из 10+ актуальных SOTA моделей.
+- 🚀 Каталог из 400+ актуальных SOTA моделей.
 
 ---
 
@@ -284,6 +314,23 @@ pathlib.Path("otter.png").write_bytes(base64.b64decode(img.data[0].b64_json))
 
 > **Примечание:** эндпоинты `images.generate` и `images.edit` возвращают изображения **только** в Base64 (`b64_json`).
 
+### Редактирование изображения
+```python
+from openai import OpenAI
+import base64, pathlib
+
+client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
+
+edited = client.images.edit(
+    model="gpt-image-1",
+    prompt="Добавь солнечные очки",
+    image=open("otter.png", "rb"),
+    mask=open("mask.png", "rb"),
+)
+pathlib.Path("otter_edit.png").write_bytes(base64.b64decode(edited.data[0].b64_json))
+```
+
+
 ### Синтез речи
 ```python
 from openai import OpenAI
@@ -337,8 +384,21 @@ open("hello.wav", "wb").write_bytes(base64.b64decode(audio.choices[0].message.au
   "created": 1677652288,
   "data": [
     {
-      "b64_json": "..."
+      "b64_json": "<base64 PNG data>"
     }
+  ]
+}
+```
+</details>
+
+<details>
+<summary>images.edit</summary>
+
+```json
+{
+  "created": 1710002223,
+  "data": [
+    {"b64_json": "<base64 PNG data>"}
   ]
 }
 ```
