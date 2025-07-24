@@ -94,8 +94,7 @@ client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
 edited = client.images.edit(
     model="gpt-image-1",
     prompt="Add sunglasses",
-    image=open("otter.png", "rb"),
-    mask=open("mask.png", "rb"),
+    image=[open("otter.png", "rb")]
 )
 pathlib.Path("otter_edit.png").write_bytes(base64.b64decode(edited.data[0].b64_json))
 ```
@@ -322,8 +321,7 @@ client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
 edited = client.images.edit(
     model="gpt-image-1",
     prompt="Добавь солнечные очки",
-    image=open("otter.png", "rb"),
-    mask=open("mask.png", "rb"),
+    image=[open("otter.png", "rb")]
 )
 pathlib.Path("otter_edit.png").write_bytes(base64.b64decode(edited.data[0].b64_json))
 ```
