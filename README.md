@@ -87,7 +87,8 @@ pathlib.Path("otter.png").write_bytes(base64.b64decode(img.data[0].b64_json))
 
 ### Image Edit
 ```python
-from openai import OpenAI, base64, pathlib
+from openai import OpenAI
+import base64, pathlib
 
 client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
 
