@@ -73,6 +73,7 @@
 * o3-mini
 * o3-mini-high
 * o3
+* o3-pro
 * o3-search
 * o4-mini
 * o4-mini-search
@@ -111,10 +112,11 @@
 * claude-3.5-haiku-20241022
 * claude-3.5-haiku-20241022:beta
 * claude-3.5-haiku:beta
-* claude-4.0-sonnet
-* claude-4.0-sonnet-search
-* claude-4.0-sonnet-thinking
-* claude-4.0-sonnet-thinking-search
+* claude-sonnet-4
+* claude-sonnet-4-search
+* claude-sonnet-4-thinking
+* claude-sonnet-4-thinking-search
+* claude-opus-4
 </details>
 
 ---
@@ -186,6 +188,7 @@
 * qwen3-8b
 * qwen-3-235b
 * qwen-3-235b-a22b
+* Qwen3-Coder-480B-A35B-Instruct-FP8
 * qwen-qwq-32b
 * qwq-32b
 * qwq-32b-preview
