@@ -200,6 +200,9 @@
 * qwen-max
 * qwen-plus
 * qwen-turbo
+
+### Video-gen
+* wan-2.1
 </details>
 
 ---
@@ -549,9 +552,6 @@
 ### TTS
 * playai-tts
 * playai-tts-arabic
-
-### Video-gen
-* wan-2.1
 </details>
 
 ---
