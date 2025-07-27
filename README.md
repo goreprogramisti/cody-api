@@ -219,8 +219,8 @@ print(OpenAI(base_url="https://cody.su/api/v1", api_key="...").models.list())
 A concise subset is shown below. See the full catalog in [MODELS.md](./MODELS.md).
 
 ## 5. Rate Limits
-- 20 requests per minute
-- 5 requests per second  
+- 40 requests per minute
+- 20 requests per second  
 Updates will be announced in our [Telegram channel](https://t.me/codyapi).
 
 ## 6. Security & Privacy
@@ -444,8 +444,8 @@ print(OpenAI(base_url="https://cody.su/api/v1", api_key="...").models.list())
 
 
 ## 5. Ограничения
-- 20 запросов в минуту
-- 5 запросов в секунду  
+- 40 запросов в минуту
+- 20 запросов в секунду  
 Обновления публикуются в [Telegram-канале](https://t.me/codyapi).
 
 ## 6. Безопасность и конфиденциальность
