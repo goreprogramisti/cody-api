@@ -1,6 +1,6 @@
 # Comprehensive Model Catalog
 
-> Last updated: 2025-07-22
+> Last updated: 2025-07-28
 >
 > Models are grouped first by provider (family) and then by their primary modality / task.
 > Use your browser’s search or the table of contents to jump quickly.
