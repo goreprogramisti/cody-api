@@ -206,7 +206,7 @@ open("hello.wav", "wb").write(base64.b64decode(audio.choices[0].message.audio.da
 |----------|--------|
 | `chat.completions` | ✅ |
 | `images.generate`  | ✅ |
-| `images.edit`      | ✅ |
+| `images.edit`      | ⚠️ |
 | `video.generations` | ✅ |
 
 ## 4. Models
@@ -430,7 +430,7 @@ open("hello.wav", "wb").write_bytes(base64.b64decode(audio.choices[0].message.au
 |----------|--------|
 | `chat.completions` | ✅ |
 | `images.generate`  | ✅ |
-| `images.edit`      | ✅ |
+| `images.edit`      | ⚠️ |
 | `video.generations` | ✅ |
 
 ## 4. Модели
