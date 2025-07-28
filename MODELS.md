@@ -6,8 +6,7 @@
 > Use your browser’s search or the table of contents to jump quickly.
 >
 > • **Text-gen** – chat / language generation models  
-> • **Img-gen** – image generation / editing models  
-> • **STT** – speech-to-text / transcription models  
+> • **Img-gen** – image generation / editing models   
 > • **TTS** – text-to-speech models  
 > • **Video-gen** – video generation models
 
@@ -59,7 +58,6 @@
 * gpt-4o-2024-08-06
 * gpt-4o-2024-11-20
 * gpt-4o:extended
-* gpt-4o-search-preview
 * chatgpt-4o-latest
 * gpt-4.1-mini
 * gpt-4.1-nano
