@@ -83,11 +83,6 @@
 ### Img-gen
 * gpt-image-1
 
-### STT
-* whisper-large-v3
-* whisper-large-v3-turbo
-* gpt-4o-mini-transcribe
-
 ### TTS
 * gpt-4o-mini-audio-preview
 </details>
@@ -419,15 +414,7 @@
 * FLUX.1-schnell
 * FLUX.1-schnell-v2
 * FLUX.1-dev
-* FLUX.1-pro
-* FLUX.1.1-pro
-* FLUX.1-canny
-* FLUX.1-depth
-* FLUX.1-dev-lora
-* FLUX.1-redux
 * FLUX.1-kontext
-* FLUX.1-kontext-pro
-* FLUX.1-kontext-max
 </details>
 
 ---
@@ -494,8 +481,6 @@
 * arcee-spotlight
 * bge-base-en-v1.5-vllm
 * ernie-4.5-300b-a47b
-* sonic
-* sonic-2
 * compound-beta
 * compound-beta-mini
 * llemma_7b
@@ -548,10 +533,6 @@
 * remm-slerp-l2-13b
 * toppy-m-7b
 * nous-hermes-2
-
-### TTS
-* playai-tts
-* playai-tts-arabic
 </details>
 
 ---
