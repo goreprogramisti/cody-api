@@ -27,7 +27,7 @@
 - 🆓 **Zero cost** and no hard quotas.
 - 🔒 **Zero-retention** architecture: no request content is persisted.
 - 📷 **Multimodal**: text, image generation/editing, Text-to-Speech.
-- 🚀 Constantly growing catalog of **400+ SOTA models**.
+- 🚀 Constantly growing catalog of **20+ SOTA models**.
 
 ---
 
@@ -79,7 +79,7 @@ import base64, pathlib
 client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
 
 img = client.images.generate(
-    model="gpt-image-1",
+    model="FLUX.1-kontext",
     prompt="A veterinarian listening to a baby otter’s heartbeat, children’s book style",
 )
 pathlib.Path("otter.png").write_bytes(base64.b64decode(img.data[0].b64_json))
@@ -93,7 +93,7 @@ import base64, pathlib
 client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
 
 edited = client.images.edit(
-    model="gpt-image-1",
+    model="FLUX.1-kontext",
     prompt="Add sunglasses",
     image=[open("otter.png", "rb")]
 )
@@ -101,27 +101,6 @@ pathlib.Path("otter_edit.png").write_bytes(base64.b64decode(edited.data[0].b64_j
 ```
 
 > **Note:** The `images.generate` and `images.edit` endpoints return images **only** as base64 (`b64_json`).
-
-### Video
-```python
-import requests, json
-
-headers = {
-    "Authorization": "Bearer cody-...",
-    "Content-Type": "application/json",
-}
-
-payload = {
-    "model": "wan-2.1",
-    "prompt": "A cinematic shot of a futuristic city with flying cars",
-    "ratio": "16:9",
-    "quality": "480p",  # only 480p supported
-    "duration": 4         # seconds; <= 4
-}
-
-resp = requests.post("https://cody.su/api/v1/video/generations", headers=headers, json=payload)
-print(resp.json())
-```
 
 ### Text-to-Speech
 ```python
@@ -183,21 +162,6 @@ open("hello.wav", "wb").write(base64.b64decode(audio.choices[0].message.audio.da
 ```
 </details>
 
-<details>
-<summary>video.generation</summary>
-
-```json
-{
-  "created": 1677652288,
-  "data": [
-    {
-      "b64_json": "<base64 Video data>"
-    }
-  ]
-}
-```
-</details>
-
 ---
 
 ## 3. Endpoints
@@ -207,7 +171,6 @@ open("hello.wav", "wb").write(base64.b64decode(audio.choices[0].message.audio.da
 | `chat.completions` | ✅ |
 | `images.generate`  | ✅ |
 | `images.edit`      | ⚠️ |
-| `video.generations` | ✅ |
 
 ## 4. Models
 ```python
@@ -254,7 +217,7 @@ Updates will be announced in our [Telegram channel](https://t.me/codyapi).
 - 🆓 **Полностью бесплатно**, без жёстких квот.
 - 🔒 **Zero-retention** архитектура: содержимое запросов не сохраняется.
 - 📷 **Мультимодальность**: текст, генерация/редактирование изображений, TTS.
-- 🚀 Каталог из **400+ актуальных SOTA моделей**.
+- 🚀 Каталог из **20+ актуальных SOTA моделей**.
 
 ---
 
@@ -306,7 +269,7 @@ import base64, pathlib
 client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
 
 img = client.images.generate(
-    model="gpt-image-1",
+    model="FLUX.1-kontext",
     prompt="Ветеринар слушает сердце детёныша выдры, стиль детской книги",
 )
 pathlib.Path("otter.png").write_bytes(base64.b64decode(img.data[0].b64_json))
@@ -320,34 +283,13 @@ import base64, pathlib
 client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
 
 edited = client.images.edit(
-    model="gpt-image-1",
+    model="FLUX.1-kontext",
     prompt="Add sunglasses",
     image=[open("otter.png", "rb")]
 )
 pathlib.Path("otter_edit.png").write_bytes(base64.b64decode(edited.data[0].b64_json))
 ```
 > **Примечание:** эндпоинты `images.generate` и `images.edit` возвращают изображения **только** в Base64 (`b64_json`).
-
-### Видео
-```python
-import requests, json
-
-headers = {
-    "Authorization": "Bearer cody-...",
-    "Content-Type": "application/json",
-}
-
-payload = {
-    "model": "wan-2.1",
-    "prompt": "Кинематографичный кадр футуристического города с летающими машинами",
-    "ratio": "16:9",
-    "quality": "480p",  # поддерживается только 480p
-    "duration": 4         # секунд; <= 4
-}
-
-resp = requests.post("https://cody.su/api/v1/video/generations", headers=headers, json=payload)
-print(resp.json())
-```
 
 ### Синтез речи
 ```python
@@ -407,21 +349,6 @@ open("hello.wav", "wb").write_bytes(base64.b64decode(audio.choices[0].message.au
 ```
 </details>
 
-<details>
-<summary>video.generation</summary>
-
-```json
-{
-  "created": 1677652288,
-  "data": [
-    {
-      "b64_json": "<base64 Video data>"
-    }
-  ]
-}
-```
-</details>
-
 ---
 
 ## 3. Эндпоинты
@@ -431,7 +358,6 @@ open("hello.wav", "wb").write_bytes(base64.b64decode(audio.choices[0].message.au
 | `chat.completions` | ✅ |
 | `images.generate`  | ✅ |
 | `images.edit`      | ⚠️ |
-| `video.generations` | ✅ |
 
 ## 4. Модели
 ```python
