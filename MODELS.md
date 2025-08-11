@@ -1,6 +1,6 @@
 # Comprehensive Model Catalog
 
-> Last updated: 2025-07-28
+> Last updated: 2025-08-11
 >
 > Models are grouped first by provider (family) and then by their primary modality / task.
 > Use your browser’s search or the table of contents to jump quickly.
@@ -8,7 +8,6 @@
 > • **Text-gen** – chat / language generation models  
 > • **Img-gen** – image generation / editing models   
 > • **TTS** – text-to-speech models  
-> • **Video-gen** – video generation models
 
 ---
 
@@ -18,7 +17,7 @@
 
 - [OpenAI](#openai)
 - [Google](#google)
-- [Zhipu AI](#zhipuai)
+- [Zhipu AI](#zhipu-ai)
 - [Qwen](#qwen)
 - [DeepSeek](#deepseek)
 - [Moonshot](#moonshot)
