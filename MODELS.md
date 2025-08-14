@@ -110,15 +110,3 @@
 FLUX.1-dev
 FLUX.1-kontext
 </details>
-
----
-
-## DeepSeek
-<details>
-<summary>Click to expand</summary>
-
-### Text-gen
-* qwen3-235b-a22b-thinking
-* qwen3-coder-480b-a35b:cerebras
-* qwen3-coder-480b-a35b
-</details>
