@@ -47,11 +47,12 @@ from openai import OpenAI
 
 client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
 
-resp = client.chat.completions.create(
+completion = client.chat.completions.create(
     model="gpt-4.1",
     messages=[{"role": "user", "content": "Короткая история про котёнка"}],
 )
-print(resp.choices[0].message.content)
+
+print(completion.choices[0].message.content)
 ```
 
 ### Streaming
@@ -82,6 +83,7 @@ img = client.images.generate(
     model="FLUX.1-kontext",
     prompt="A veterinarian listening to a baby otter’s heartbeat, children’s book style",
 )
+
 pathlib.Path("otter.png").write_bytes(base64.b64decode(img.data[0].b64_json))
 ```
 
@@ -97,6 +99,7 @@ edited = client.images.edit(
     prompt="Add sunglasses",
     image=[open("otter.png", "rb")]
 )
+
 pathlib.Path("otter_edit.png").write_bytes(base64.b64decode(edited.data[0].b64_json))
 ```
 
@@ -115,6 +118,7 @@ audio = client.chat.completions.create(
     audio={"voice": "alloy", "format": "wav"},
     messages=[{"role": "user", "content": "Привет, мир!"}],
 )
+
 open("hello.wav", "wb").write(base64.b64decode(audio.choices[0].message.audio.data))
 ```
 
@@ -237,11 +241,11 @@ from openai import OpenAI
 
 client = OpenAI(base_url="https://cody.su/api/v1", api_key="cody-...")
 
-resp = client.chat.completions.create(
+completion = client.chat.completions.create(
     model="gpt-4.1",
     messages=[{"role": "user", "content": "Короткая история про котёнка"}],
 )
-print(resp.choices[0].message.content)
+print(completion.choices[0].message.content)
 ```
 
 ### Стриминг
@@ -272,6 +276,7 @@ img = client.images.generate(
     model="FLUX.1-kontext",
     prompt="Ветеринар слушает сердце детёныша выдры, стиль детской книги",
 )
+
 pathlib.Path("otter.png").write_bytes(base64.b64decode(img.data[0].b64_json))
 ```
 
@@ -287,6 +292,7 @@ edited = client.images.edit(
     prompt="Add sunglasses",
     image=[open("otter.png", "rb")]
 )
+
 pathlib.Path("otter_edit.png").write_bytes(base64.b64decode(edited.data[0].b64_json))
 ```
 > **Примечание:** эндпоинты `images.generate` и `images.edit` возвращают изображения **только** в Base64 (`b64_json`).
@@ -304,6 +310,7 @@ audio = client.chat.completions.create(
     audio={"voice": "alloy", "format": "wav"},
     messages=[{"role": "user", "content": "Привет, мир!"}],
 )
+
 open("hello.wav", "wb").write_bytes(base64.b64decode(audio.choices[0].message.audio.data))
 ```
 
